@@ -1,0 +1,41 @@
+﻿<ion-view view-title="{{customer.Name +', ' + customer.AKA}}">
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">Company</span>
+                <input ng-model="customer.Name" type="text">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">AKA</span>
+                <input ng-model="customer.AKA" type="text">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Email</span>
+                <input ng-model="customer.Email" type="text">
+            </label>
+         
+ 
+
+            <label class="item item-input item-select">
+                <span class="input-label">
+                    Type
+                </span>
+
+                <select ng-model="customer.Type">
+                    <option ng-repeat="t in TYPES"
+                            ng-selected="{{ t.value == customer.Type}}"
+                            value="{{ t.value}}">
+                        {{ t.text }}
+                    </option>
+                </select>
+            </label>
+
+
+
+
+        
+
+            <button class="button button-full button-positive" ng-click="Save(customer)">Save</button>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view view-title="Customers" >
+    <ion-content class="padding">
+        <!--<form ng-submit="search()">
+            <label>
+                <span>Search:</span>
+                <input type="text" ng-model="filter" />
+            </label>
+            <label>
+                <button type="submit" class="button button-block button-positive">Search</button>
+            </label>
+        </form>-->
+       
+        <ion-list>
+            <form ng-submit="search(filter)">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" ng-model="filter" placeholder="Search">
+                </label>
+            </form>
+            <ion-item class="item-remove-animate item-icon-right" ng-repeat="c in customers" href="#/app/customers/{{c.idCustomer}}">
+                <p>
+                    <span ng-bind="c.Name"></span>
+                    <span ng-bind="c.AKA"></span>
+                   
+                </p>
+                <a href="emailto:{{c.Email}}">{{c.Email}}</a>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                 
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="CanLoadMore"
+                             on-infinite="loadMore()"
+                             distance="1%">
+        </ion-infinite-scroll> 
+    </ion-content>
+</ion-view>
+
+
+

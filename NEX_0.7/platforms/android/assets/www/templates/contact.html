@@ -1,0 +1,23 @@
+﻿<ion-view view-title="{{contact.FirstName +' ' + contact.LastName}}">
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">First Name</span>
+                <input ng-model="contact.FirstName" type="text">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Last Name</span>
+                <input ng-model="contact.LastName" type="text">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Email</span>
+                <input ng-model="contact.Email" type="text">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Mobile</span>
+                <input ng-model="contact.Mobile" type="text">
+            </label>
+            <button class="button button-full button-positive" ng-click="Save(contact)">Save</button>
+        </div>
+    </ion-content>
+</ion-view>
